@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-paper: #D9C8A9;
+    --color-paper-light: #E4D7BE;
+    --color-paper-dark: #C6B38E;
+    --color-ink: #111111;
+    --color-ink-faded: #222222;
+    --color-rust: #B52A1C;
+    --color-rust-dark: #8F1F14;
+
+    --font-blackletter: 'UnifrakturMaguntia', 'Old English Text MT', 'Pirata One', serif;
+    --font-masthead: 'Anton', 'Impact', sans-serif;
+    --font-headline: 'Oswald', 'Anton', sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-typewriter: 'Courier Prime', 'Courier New', monospace;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html {
+    font-family: var(--font-typewriter);
+    color: var(--color-ink);
+    background-color: var(--color-paper);
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+.font-blackletter {
+  font-family: var(--font-blackletter);
+}
+
+.font-masthead {
+  font-family: var(--font-masthead);
+}
+
+.font-headline {
+  font-family: var(--font-headline);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-typewriter {
+  font-family: var(--font-typewriter);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Vintage printed newsprint textures and halftone effects */
+.bg-newsprint {
+  background-color: #D6C4A5;
+  background-image: 
+    radial-gradient(#111111 0.45px, transparent 0.45px),
+    radial-gradient(#8f7d5e 0.45px, #D6C4A5 0.45px);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+}
+
+.newsprint-aging {
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(181, 42, 28, 0.035) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(0, 0, 0, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+}
+
+.vintage-photo-filter {
+  filter: contrast(145%) brightness(92%) sepia(28%) saturate(75%);
+}
+
+.vintage-photo-halftone {
+  position: relative;
+}
+.vintage-photo-halftone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0,0,0,0.18) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: multiply;
+}
+
+/* Authentic newsprint double-line borders */
+.border-double-ink {
+  border-style: double;
+  border-width: 3px;
+  border-color: #111111;
+}
+
+/* Custom newspaper scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #C6B38E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111111;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B52A1C;
+}
